@@ -72,12 +72,14 @@ int install_zip(const char* packagefilepath)
 #ifndef BOARD_HAS_NO_MISC_PARTITION
     if (firmware_update_pending()) {
         ui_print("\nReboot via menu to complete\ninstallation.\n");
-        ui_print("\nVisit:http://www.goapk.com \nFor More Infomation\n");
 
     }
 #endif
     ui_set_background(BACKGROUND_ICON_NONE);
     ui_print("\nInstall from sdcard complete.\n");
+#ifdef BOARD_GOAPK_DEFY
+    ui_print("\nVisit:http://www.goapk.com \nFor More Infomation\n");
+#endif
     return 0;
 }
 
